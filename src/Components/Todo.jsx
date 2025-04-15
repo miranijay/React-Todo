@@ -3,9 +3,10 @@ import './Todo.css';
 import TodoForm from './TodoForm.jsx';
 import TodoList from './TodoList.jsx';
 import TodoDate from './TodoDate.jsx';
+import { getLocalStorageTodo, setLocalStorageTodo } from './TodoLocalStorage.jsx';
 
 const Todo = () => {
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState(() => getLocalStorageTodo());
     
     const handleFormSubmit = (inputVal) => {
         const {id, content, checked} = inputVal;
@@ -24,6 +25,9 @@ const Todo = () => {
             return [...prevTask, {id, content, checked}]
         })
     }
+
+    // Add task to localStorage
+    setLocalStorageTodo(tasks);
 
     // Handle Delete Button Function
     const handleDelete = (value) => {
