@@ -34,6 +34,7 @@ const TodoList = ({ id, data, checked, edit, handleDelete, handleCheck, tasks, s
     <li className='todo-item'>
         { edit 
             ? <input 
+                name='edit'
                 type='text' 
                 value={editData} 
                 onChange={(e) => setEditData(e.target.value)} 
