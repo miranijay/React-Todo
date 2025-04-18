@@ -1,5 +1,6 @@
 const todoKey = "reactTodo";
 
+// localStorage.clear();
 export const getLocalStorageTodo = () => {
     const rawTodo = localStorage.getItem(todoKey);
     return rawTodo ? JSON.parse(rawTodo) : [];

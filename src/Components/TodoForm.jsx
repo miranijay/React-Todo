@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const TodoForm = ({ addTask }) => {
-    const [inputVal, setInputVal] = useState({ id: "", content: "", checked: false });
+    const [inputVal, setInputVal] = useState({ id: "", content: "", checked: false, edit: false });
 
     const handleKeyDown = (e) => {
         if (e.key === ' ' && (inputVal.content.length === 0)) {
@@ -11,13 +11,13 @@ const TodoForm = ({ addTask }) => {
     };
 
     const handleInput = (value) => {
-        setInputVal({ id: value, content: value, checked: false });
+        setInputVal({ id: value, content: value, checked: false, edit: false  });
     }
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
         addTask(inputVal);
-        setInputVal({ id: "", content: "", checked: false });
+        setInputVal({ id: "", content: "", checked: false, edit: false });
     }
 
     return (
