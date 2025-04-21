@@ -11,7 +11,7 @@ const TodoForm = ({ addTask }) => {
     };
 
     const handleInput = (value) => {
-        setInputVal({ id: value, content: value, checked: false, edit: false  });
+        setInputVal({ id: new Date(), content: value, checked: false, edit: false  });
     }
 
     const handleFormSubmit = (e) => {

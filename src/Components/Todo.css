@@ -191,3 +191,8 @@ li span {
 .clear-btn:hover {
     background-color: #8d1407;
 }
+
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.1;
+}
