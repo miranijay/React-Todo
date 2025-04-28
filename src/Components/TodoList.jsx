@@ -23,6 +23,7 @@ const TodoList = ({ id, data, checked, edit, handleDelete, handleCheck, tasks, s
                 return task;
             }
         })
+
         if(data === editedData){
             setTasks(editTask);
         } else {
@@ -45,7 +46,11 @@ const TodoList = ({ id, data, checked, edit, handleDelete, handleCheck, tasks, s
         <button className='check-btn' onClick={() => handleCheck(data)}>
             <MdCheck />
         </button>
-        <button className={`edit-btn ${checked ? 'disabled' : null}`} disabled={checked} onClick={() => handleEdit(data,editData)}>
+        <button 
+            className={`edit-btn ${checked ? 'disabled' : null}`} 
+            disabled={checked} 
+            onClick={() => handleEdit(data,editData)}
+        >
             {
                 edit ? <FaSave /> :<MdEdit />
             }
